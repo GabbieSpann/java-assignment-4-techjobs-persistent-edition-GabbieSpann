@@ -22,5 +22,8 @@ public class Skill extends AbstractEntity {
 
     public Skill() {
     }
+    public List<Job> getJobs(){
+        return this.jobs;
+    }
 
 }

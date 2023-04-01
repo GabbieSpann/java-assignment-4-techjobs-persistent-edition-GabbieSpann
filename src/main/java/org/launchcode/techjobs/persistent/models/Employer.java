@@ -10,22 +10,22 @@ import javax.validation.constraints.Size;
 import java.util.*;
 @Entity
 public class Employer extends AbstractEntity {
-    @OneToMany(mappedBy = "employers")
-    @JoinColumn (name = "employer_id")
+
+    @OneToMany
+    @JoinColumn(name ="employer_id")
     private List<Job> jobs = new ArrayList<>();
 
-    public Employer() {
+    public Employer(){}
 
-        this.jobs = new ArrayList<Job>();
-    }
-    @NotNull
-    @NotBlank
-    @Size (min=4, max=60, message="Variable must be between 4 and 60 characters.")
+    @NotBlank(message = "Must not be blank")
+    @Size(min = 3,max = 75)
     private String location;
-    public String getLocation(){
+
+    public String getLocation() {
         return location;
     }
-    public void setLocation(String location){
+
+    public void setLocation(String location) {
         this.location = location;
     }
 }
